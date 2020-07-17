@@ -630,7 +630,7 @@ class API:
         if not message_sent:
             log_embed.description += _(
                 "\n\n***The message couldn't be delivered to the member. We may don't "
-                "have a server in common or he blocked me/messages from this guild.***"
+                "have a server in common or they blocked me/messages from this guild.***"
             )
 
         # embed for the member in DM
@@ -888,7 +888,7 @@ class API:
                 # check if the member is below the bot in the roles's hierarchy
                 return errors.MemberTooHigh(
                     _(
-                        "Cannot take actions on this member, he is "
+                        "Cannot take actions on this member, they are "
                         "above than me in the roles hierarchy. Modify "
                         "the hierarchy so my top role ({bot_role}) is above {member_role}."
                     ).format(bot_role=guild.me.top_role.name, member_role=member.top_role.name)
@@ -1150,7 +1150,7 @@ class API:
                     except discord.errors.HTTPException as e:
                         log.warn(
                             f"[Guild {guild.id}] Couldn't end the timed {action_str} of {member} "
-                            f"(ID: {member.id}). He will stay as it is now.",
+                            f"(ID: {member.id}). They will stay as it is now.",
                             exc_info=e,
                         )
                     else:
