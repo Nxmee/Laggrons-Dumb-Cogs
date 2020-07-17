@@ -889,7 +889,7 @@ class API:
                 return errors.MemberTooHigh(
                     _(
                         "Cannot take actions on this member, they are "
-                        "above than me in the roles hierarchy. Modify "
+                        "above me in the roles hierarchy. Modify "
                         "the hierarchy so my top role ({bot_role}) is above {member_role}."
                     ).format(bot_role=guild.me.top_role.name, member_role=member.top_role.name)
                 )
